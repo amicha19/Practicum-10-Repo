@@ -9,23 +9,32 @@
 // <n> is odd
 // <n> is even
 // --------------------------------------------------------------
-boolean odd;
+import java.util.Scanner;
 
-// (TO COMPLETE)
+public class EvenOddChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter an integer: ");
 
+        int number;
 
+        // Handle non-integer input
+        while (!scanner.hasNextInt()) {
+            System.out.println("Invalid input. Please enter an integer.");
+            scanner.next(); // consume the invalid input
+            System.out.print("Enter an integer: ");
+        }
 
+        number = scanner.nextInt();
 
+        if (number % 2 == 0) {
+            System.out.println(number + " is even");
+        } else {
+            System.out.println(number + " is odd");
+        }
 
+        scanner.close();
+    }
+}
 
-
-
-
-
-
-// (MUST KEEP THESE LINES)
-if(odd)
-  System.out.println(n + " is odd");
-else
-  System.out.println(n + " is even");
